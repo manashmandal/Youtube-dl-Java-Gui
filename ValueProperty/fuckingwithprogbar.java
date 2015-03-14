@@ -46,9 +46,10 @@ public class FuckingWithProgressBar extends Application {
         Button btn = new Button("Click To Set");
         DoubleProperty doubleNumber = new SimpleDoubleProperty();
         
+        
         doubleNumber.addListener(ov->{
             System.out.println("The new value is: " + doubleNumber.doubleValue());
-        
+            bar.setProgress(x);
         });
         
        
@@ -62,7 +63,7 @@ public class FuckingWithProgressBar extends Application {
         
         btn.setOnAction((e) -> {
          line = text.getText();
-         double x = Double.parseDouble(line);
+         x = Double.parseDouble(line);
          doubleNumber.set(x);
     });
 
